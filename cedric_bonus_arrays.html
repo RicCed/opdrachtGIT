@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let voornamen = ["Jan", "Piet", "Joris", "Korneel"];
+      let keuze = prompt(`De hoeveelste naam wil u kiezen uit ${voornamen}?`);
+      document.write(`<p>U koos voor ${voornamen[keuze - 1]}</p>`);
+      keuze = prompt(
+        `Geef het nummer van de naam die u wil verwijderen uit ${voornamen}`
+      );
+      voornamen.splice(keuze - 1, 1);
+      document.write(`<p>${voornamen}</p>`);
+    </script>
+  </body>
+</html>

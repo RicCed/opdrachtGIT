@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let tekst = prompt("Geef me een tekst");
+      let zoektekst = prompt("Geef me een te zoeken tekst");
+      document.write(
+        `<p>1. In de tekst '${tekst}' begint de te zoeken tekst '${zoektekst} op positie ${tekst.indexOf(
+          zoektekst
+        )}</p>`
+      );
+      let postcode = "1000";
+      let woonplaats = "Brussel";
+      tekst = "Hij woont in de postcode 1000, te Brussel.";
+      document.write(
+        `<p>In de tekst '${tekst}' begint '${postcode}' op positie ${tekst.indexOf(
+          postcode
+        )} en '${woonplaats}'' op positie ${tekst.indexOf(woonplaats)}</p>`
+      );
+      let nieuwTekst = tekst.replace(woonplaats, "xxxx");
+      nieuwTekst = nieuwTekst.replace(postcode, "xxxx");
+      document.write(`<p>De gecensureerde zin is dan: ${nieuwTekst}</p>`);
+      tekst =
+        "JavaScript is de belangrijkste scriptingtaal voor het web. De taal bestaat al sinds 1995 en werd uitgevonden door Brendan Eich voor gebruik in de webbrowser Netscape 2.";
+      zoeken = "de";
+      document.write(
+        `<p>In de tekst '${tekst}' staat de tweede '${zoeken}' volgens JavaScript op positie ${tekst.indexOf(
+          zoeken,
+          tekst.indexOf(zoeken) + 1
+        )}</p>`
+      );
+    </script>
+  </body>
+</html>

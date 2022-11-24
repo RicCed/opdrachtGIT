@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let datum = new Date();
+      function ingeven() {
+        let geboortejaar = prompt("In welk jaar bent u geboren?");
+        let leeftijd = prompt("Hoe oud denkt u te worden?");
+        let aantal = prompt("Hoeveel aantal koppen koffie drinkt u per dag?");
+        if (geboortejaar == null || leeftijd == null || aantal == null) {
+          document.write(`<p>Er is geannulleerd</p>`);
+        } else if (
+          geboortejaar.length == 0 ||
+          leeftijd.length == 0 ||
+          aantal.length == 0
+        ) {
+          document.write(`<p>Er is niets ingevoerd</p>`);
+        } else if (isNaN(geboortejaar) || isNaN(leeftijd) || isNaN(aantal)) {
+          document.write(`<p>Dit is geen correcte ingave</p>`);
+        } else {
+          tonen(geboortejaar, leeftijd, aantal);
+        }
+      }
+
+      function tonen(geboortejaar, leeftijd, aantal) {
+        let ouderdom = datum.getFullYear() - geboortejaar;
+        let koffie = aantal * 365 * (leeftijd - ouderdom);
+        console.log(koffie);
+        document.write(
+          `<p>Je bent nu ${ouderdom}. Tegen ${aantal} koppen koffie per dag zal je ${koffie} koppen koffie drinken als je ${leeftijd} jaar oud zal worden.</p>`
+        );
+      }
+
+      ingeven();
+    </script>
+  </body>
+</html>

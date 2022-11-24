@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      alert("Eerste cylinder");
+      let radius = prompt("Wat is de radius van de eerste cylinder?", 8.41234);
+      let hoogte = prompt("Wat is de hoogte van de eerste cylinder?", 15.4567);
+      let aantal = prompt(
+        "Hoeveel decimalen wil je gebruiken voor de berekening van het volume voor de eerste cylinder?",
+        2
+      );
+      let volume =
+        3.1415 *
+        parseFloat(radius).toFixed(aantal) ** 2 *
+        parseFloat(hoogte).toFixed(aantal);
+      document.write(
+        `<p>Voor de eerste cylinder met radius ${radius} en hoogte ${hoogte} en aantal decimalen ${aantal} geeft dit omgezet: ${parseFloat(
+          radius
+        ).toFixed(aantal)} en ${parseFloat(hoogte).toFixed(
+          aantal
+        )}. Het volume is dan: ${parseFloat(volume).toFixed(aantal)}</p>`
+      );
+      alert("Tweede cylinder");
+      radius = prompt("Wat is de radius van de tweede cylinder?", 3.6543);
+      hoogte = prompt("Wat is de hoogte van de tweede cylinder?", 9.873265);
+      aantal = prompt(
+        "Hoeveel decimalen wil je gebruiken voor de berekening van het volume van de tweede cylinder?",
+        4
+      );
+      let volume2 =
+        3.1415 *
+        parseFloat(radius).toFixed(aantal) ** 2 *
+        parseFloat(hoogte).toFixed(aantal);
+      let totaal = parseInt(
+        (parseFloat(volume) + parseFloat(volume2)).toFixed(0)
+      );
+      document.write(
+        `<p>Voor de tweede cylinder met radius ${radius} en hoogte ${hoogte} en aantal decimalen ${aantal} geeft dit omgezet: ${parseFloat(
+          radius
+        ).toFixed(aantal)} en ${parseFloat(hoogte).toFixed(
+          aantal
+        )}. Het volume is dan: ${parseFloat(volume2).toFixed(aantal)}`
+      );
+      document.write(
+        `<p>Samen is dit een naar onder afgerond volume van ${totaal}</p>`
+      );
+    </script>
+  </body>
+</html>
